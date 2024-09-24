@@ -1,0 +1,44 @@
+<!-- 2번 : flex box를 이용한 레이아웃 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3개 영역의 레이아웃</title>
+  <style>
+    * {
+      margin:0;
+      padding: 0;
+    }
+    .main-container{
+      border:3px solid black;
+    }
+
+    .header {
+      height: 120px;
+      border: 1px solid red;
+      background-color: cadetblue;
+    }
+
+    .section{
+      height: 500px;
+      border : 1px solid magenta;
+      background-color: coral;
+    }
+
+    .footer{
+      height: 120px;
+      border: 1px solid blue;
+      background-color: skyblue;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="header">header</div>
+    <div class="section">section</div>
+    <div class="footer">footer</div>
+  </div>  
+</body>
+</html>

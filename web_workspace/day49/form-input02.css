@@ -1,0 +1,37 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+fieldset{
+  border: 2px solid grey;
+  background-color: salmon;
+  padding: 20px;
+  margin: 20px;
+}
+
+legend{
+  font-weight: bold;
+  padding: 10px;
+  background-color: beige;
+  border: 1px solid black;
+  font-size: 25px;
+}
+
+label{
+  display: block;
+  margin: 10px auto;
+}
+
+input[type="text"], input[type="password"], input[type="date"]{
+  width: 250px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+#name, #birthdate, #address, #id, #pw{
+  font-size: 16px;
+  font-weight: bold;
+  background-color: aqua;
+}

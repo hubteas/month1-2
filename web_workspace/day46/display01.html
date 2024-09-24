@@ -1,0 +1,98 @@
+<!-- 4번 : display속성 - none, block, inline, inline-block -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>디스플레이 속성</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    span, div, h1{
+      margin: 10px;
+    }
+
+    .span--inline{
+      border: 1px solid red;
+      background-color: antiquewhite;
+      /* width: 100px;
+      height: 100px; */
+    }
+
+    .div--block{
+      background-color: blue;
+      border: 1px solid black;
+    }
+
+    .span--block{
+      background-color: yellow;
+      border: 1px, solid black;
+      display: block;
+      width: 100px;
+      height: 100px;
+    }
+
+    .div--inline{
+      background-color: yellowgreen;
+      border: 1px solid black;
+      display: inline;
+      /* width: 100px; */
+      /* height: 100px; */
+    }
+
+    .div--inline-block{
+      background-color: chocolate;
+      border: 1px solid black;
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+    }
+
+    .span--inline-block{
+      background-color: gold;
+      border: 1px solid black;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+    }
+
+    .div--none{
+      background-color: black;
+      border: 1px solid white;
+      display: none;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <h1>display : inline</h1>
+  <!-- span.span--inline{span$}*5 -->
+  <span class="span--inline">span1</span>
+  <span class="span--inline">span2</span>
+  <span class="span--inline">span3</span>
+  <span class="span--block">span4</span>
+  <span class="span--block">span5</span>
+
+  <h1>display : block</h1>
+  <div class="div--block">div1</div>
+  <div class="div--block">div2</div>
+  <div class="div--block">div3</div>
+  <div class="div--inline">div4</div>
+  <div class="div--inline">div5</div>
+
+  <h1>display : inline-block</h1>
+  <div class="div--inline-block">div1</div>
+  <div class="div--inline-block">div2</div>
+  <span class="span--inline-block">span1</span>
+  <span class="span--inline-block">span2</span>
+
+  <h1>display : none</h1>
+  <div class="div--none">div1</div>
+  <div class="div--none">div2</div>
+  <div id="div3">div3</div>
+</body>
+</html>

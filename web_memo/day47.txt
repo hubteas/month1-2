@@ -1,0 +1,128 @@
+day47(웹개발3 11일차)
+복습 -> flex box
+
+0. 복습
+1) 박스모델(Box Model)
+	HTML의 모든 요소는 일정 영역을 가지고 있고 CSS 이러한 영역을 박스모델이라고 한다
+
+	margin : 테두리 바깥 여백
+		margin : 4방향
+		margin : 상하 좌우
+		margin : 상 좌우 하
+		margin : 상 우 하 좌
+	border : 테두리
+		border : 굵기 모양 색상
+	padding : 테두리 안쪽 여백
+		padding : 4방향
+		padding : 상하 좌우
+		padding : 상 좌우 하
+		padding : 상 우 하 좌
+	contents : 컨텐츠 영역
+		블록요소에 적용가능 
+		width : 너비값
+		height : 높이값
+
+2) display 속성
+	display : none | block | inline | inline-block
+		none : 요소를 보이지 않게 설정
+		block : 블록요소로 설정, 가로 영역을 모두 차지한다
+		inline : 인라인 요소로 설정, 컨텐츠 크기만큼만 차지한다
+		inline-block : 내부는 block요소처럼, 외부는 inline요소처럼 사용한다
+
+3) flex box
+	레이아웃을 만들 때 사용하는 속성
+	
+flex container 
+	레이아웃을 적용하여 배치하려는 요소들을 감싸고 있는 부모요소
+	display : flex
+	
+flex item
+	실질적으로 배치하려는 요소, flex container의 자식요소
+	flex item을 세로로 설정할 때는
+	flex container에서 display : flex를 설정하고 
+	flex-direction : column으로 설정해야한다
+
+주축(main axis)
+	자식 요소가 배치되는 방향
+
+교차축(cross axis)
+	주축을 가로지르는 방향
+
+1. flex container의 주요속성
+	배치하려는 요소들의 전체 흐름, 정렬과 관련된 속성
+
+- display : flex;
+	flex container를 지정하는 속성
+- flex-direction : row | column;
+	주축의 방향을 지정하는 속성
+	row 	행 방향(기본값)
+	column 	열방향
+- justify-content : center | space-between | space-around
+	컨테이너의 주축을 기준으로 아이템을 정렬하는 속성
+ 	center 		가운데 정렬
+	space-between	첫번째 아이템과 마지막 아이템을 컨테이너 영역의 양 끝에 배치하고
+			나머지 아이템들은 동일한 간격으로 정렬(마진이 없으면 완전히 끝으로 붙는다)
+	space-around	모든 아이템을 동일한 간격으로 정렬
+- align-item : 주축을 기준으로 flex item을 수직으로 정렬
+	align-item : stretch | flex-start | center | baseline | flex-end
+	stretch 	flex item의 높이를 늘려 flex container 전체 높이를 채운다
+	flex-start	교차축의 시작부분을 기준으로 flex item 정렬
+	center		교차축의 중앙을 기준으로 flex item 정렬
+	baseline	글꼴의 기준선인 baseline을 기준으로 flex item 정렬
+	flex-end	교차축의 끝부분을 기준으로 flex item 정렬	
+
+- align-content : center | space-between | space-around
+	컨테이너의 교차축을 기준으로 아이템을 정렬하는 속성
+	justify-content와 속성값이 동일하다
+
+- flex-wrap : nowrap | wrap
+	컨테이너 내부의 요소들이 많거나 크기가 커서 컨테이너를 넘어가게 되었을 때 한줄로 보여줄 것인지,
+	여러줄로 보여줄 것인지를 지정하는 속성
+	nowrap	flex-wrap의 기본값, 줄바꿈을 하지 않고 한줄로 보여준다
+		만약 컨테이너의 크기가 작다면 각각 아이템의 크기가 줄어든다
+	wrap	컨테이너의 크기가 작다면 여러줄로 보여준다
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

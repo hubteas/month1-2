@@ -1,0 +1,35 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+h1{
+  color: blue;
+  text-align: center;
+}
+
+span{
+  color:green;
+  font-size: 30px;
+  /* text-align: center; 
+  span tag는 인라인 요소이다.
+  인라인 요소의 크기는 컨텐츠의 크기와 일치한다
+  딱 맞는 칸에 들어간 요소가 정렬될 수는 없다.
+  따라서 인라인 요소는 text-align 이 불가능하다.
+  */
+}
+
+#my-list{
+  list-style-type: none;
+}
+
+#phone-number{
+  font-size: 50px;
+  background-color: beige;
+}
+
+div{
+  background-color: rgb(66, 48, 145);
+  color: #ffffff;
+  text-align: center;
+}

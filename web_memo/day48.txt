@@ -1,0 +1,119 @@
+day48(웹개발3 12일차)
+
+복습 -> 시맨틱 태그 -> position -> 고급선택자 -> transform -> transition
+
+0. 복습
+1) display 속성
+   display : none | block | inline | inline-block
+
+2) flex box
+   레이아웃을 만들 때 사용하는 속성
+
+flex container
+   레이아웃을 적용하여 배치하려는 요소들을 감싸고 있는 부모요소
+   display : flex
+   flex-direction : row
+
+flex item
+   실질적으로 배치하려는 요소, flex container의 자식요소
+   flex item을 세로로 설정시 flex-direction : column으로 설정해야한다
+
+주축(main axis)
+   자식요소가 배치되는 방향
+
+교차축(cross axis)
+   주축을 가로지르는 방향
+
+- justify-content : center | space-between | space-around
+   컨테이너의 주축을 기준으로 아이템을 정렬하는 속성
+
+- align-item :  stretch | flex-start | flex-end | center | baseline
+   주축을 기준으로 flex-item을 수직으로 정렬하는 속성
+
+- align-content : center | space-between | space-around
+   컨테이너의 교차축을 기준으로 아이템을 정렬하는 속성
+
+- flex-wrap : nowrap | wrap
+   컨테이너 내부의 요소들이 많거나 크기가 커서 컨테이너를 넘어가게 되었을 때
+   한줄로 보여줄것인지, 여러줄로 보여줄 것인지를 지정하는 속성
+
+1. 시맨틱 태그(semantic 태그)
+   태그 자체적으로 의미가 있는 태그
+
+1) 시맨틱 태그의 종류
+   <header> 페이지의 헤더영역, 최상단에 위치함
+   <footer> 회사 정보등을 담은 푸터영역, 최하단에 위치함 
+   <nav>  다른 페이지로 이동하는 요소를 담은 네이게이션 영역
+   <main> 주 컨텐츠가 들어가는 영역
+   <aside>  주 내용과는 연관성이 낮은 분리된 영역, 주로 사이드바로 사용
+   <section>  컨텐츠간 영역을 나눌 떄 사용
+   <article>  독립되고 반복적으로 재사용가능한 컨텐츠 영역 
+   etc... 
+
+2. position
+   HTML 요소를 배치하는 속성
+
+   position : static | relative | absolute | fixed | sticky
+   - static
+      position 속성의 기본값, 일반적인 흐름으로 배치된다
+   - relative
+      static과 동일하게 배치된다
+      차이점은 현재 자신의 위치를 기준으로 배치를 변경할 수 있다
+      top, right, bottom, left 속성을 사용한다
+   - absolute
+      일반적인 흐름과 무관하게 배치할 수 있다
+      position : static 이 아닌 부모 요소를 기준으로 배치된다
+      만약 조상요소 중 static이 아닌 요소가 없다면 body를 기준으로 배치한다
+   - fixed
+      브라우저 화면상으로 보이는 영역(viewport)에 고정되도록 배치한다
+      즉, 스크롤을 하여도 고정된다
+   - sticky
+      처음에는 일반적인 흐름에 배치되고 스크롤이 특정위치에 도달하면 fixed처럼
+      화면에 고정된다
+      주의사항 : 부모 요소에 height가 지정되어야만 작동한다!!
+
+position과 관련된 속성
+   z-index
+      요소가 배치될 때 겹치게 된다면 어떤 요소가 위로 올라올지 순서를 정하는 속성
+      기본값은 auto이며 지정하는 값은 1, 10, 100, -1, -100 등의 숫자를 사용한다
+      숫자가 높을수록 요소가 앞으로 앞으로 나오게 된다
+      주의사항: position이 static이 아닌 요소에만 적용이 된다
+
+3. 고급선택자
+1) 연결선택자
+   - 하위 선택자
+     상위선택자 하위선택자{}
+      상위 요소에 포함된 모든 하위 요소를 선택한다
+      자식을 포함한 모든 자손이 선택된다
+   - 자식 선택자
+     부모요소 > 자식요소{}
+      부모 요소 바로 아래에 속한 자식 요소를 선택한다
+   - 인접형제선택자
+     요소1 + 요소2
+   - 형제 선택자
+     요소1 ~ 요소2
+
+2) 속성선택자
+   - 선택자[속성]
+   - 선택자[속성=속성값]
+      특정 속성을 가진 요소를 선택한다
+
+3) 가상선택자
+- 가상클래스
+   선택자:가상클래스{}
+   실제 존재하는 요소의 특정 상태에 따라 css를 주고싶을 때 사용
+   - link : href속성을 가진 태그 중 아직 방문하지 않은상태
+   - visited : 이미 방문한 상태
+   - hover : 사용자가 마우스를 올린 상태
+   - focus : 입력가능한 칸을 선택한 상태
+   - nth-child : 형제 중 순서로 선택함
+   - not(선택자) : 해당 선택자를 제외하고 선택함
+
+- 가상요소
+   선택자::가상요소{}
+   요소의 특정 부분에 스타일을 지정하거나 새로운 요소를 삽입하기 위해 사용한다
+   - first-letter : 첫글자만 선택(블록요소에만 가능)
+   - first-line : 첫줄만 선택(블록요소에만 가능)
+   - before : 선택한 요소의 컨텐츠 앞에 다른 요소 삽입
+   - after : 선택한 요소의 컨텐츠 뒤에 다른 요소 삽입
+

@@ -1,0 +1,50 @@
+<!-- 3번 : flex box를 이용한 레이아웃 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout 설정</title>
+  <style>
+    *{
+      margin:0;
+      padding: 0;
+    }
+    .main{
+      border: 3px solid black;
+      /* 컨테이너가 갖는 크기를 확인해본다 */
+      
+    }
+    .header, .footer{
+      background-color: beige;
+      height: 130px;
+    }
+    
+    .section-container{
+      display: flex;
+    }
+    
+    .aside{
+      background-color: blueviolet;
+      width: 150px;
+      height: 300px;
+    }
+    .section{
+      background-color: brown;
+      width:100%;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="header">header</div>
+    <div class="section-container">
+      <div class="aside">aside</div>
+      <div class="section">section</div>
+    </div>
+    <div class="footer">footer</div>
+  </div>
+</body>
+</html>

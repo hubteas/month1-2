@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>뷰포트</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    section{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+
+    div{
+      /* div요소의 크기가 뷰포트에 따라 바뀌는 이유는 부모요소가 flex이기 떄문이다.
+      자식 요소의 크기를 고정시키고 싶다면 flex: none;을 주면된다 */
+      /* flex: none; */
+      background-color: aqua;
+      width: 20vw;
+      height: 20vw;
+      /* 뷰포트 단위를 사용하면 디바이스 뷰포트와 상관없이 요소를 정사각형으로 표현한다. */
+      margin: 10px;
+    }
+
+    @media (max-width:300px) and (min-width: 250px){
+      body{
+        background-color: yellow;
+      }
+
+      section{
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      div{
+        background-color: red;
+        width: 40vw;
+        height: 40vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>내사이트</h1>
+    <hr>
+    <section>
+      <span>
+        애국가 1절~4절
+        1. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라만세
+        무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
+        2. 남산위에 저 소나무 철갑을 두른듯 바람서리 불변함은 우리 기상일세
+        무궁화 삼천리 화려강산 대한사람 대한으로 길이보전하세
+        3. 가을하늘 공활한데 높고 구름없이 밝은 달은 우리 가슴 일편단심일세
+        무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
+        4. 이 기상과 이 맘으로 충성을 다하여 괴로우나즐거우나 나라 사랑하세
+        무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
+      </span>
+    </section>
+    <section>
+      <div class="div1"></div>
+      <div class="div2"></div>
+      <div class="div3"></div>
+      <div class="div4"></div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연결선택자</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    main, section, div{
+      border: 1px solid black;
+      padding: 20px;
+    }
+
+    main{
+      width:80%;
+      height:600px;
+      margin: auto;
+    }
+
+    section{
+      width: 80%;
+      height: 80%;
+      margin:auto;
+    }
+
+    div{
+      width: 80%;
+      margin: auto;      
+    }
+
+    /* 연결선택자 */
+    /* 하위선택자 */
+    main div{
+      border-radius: 20px;
+      background-color: gray;
+    }
+
+    /* 자식선택자 */
+    section > div{
+      background-color: violet;
+    }
+
+    /* 인접형제 선택자 */
+    .div3 + div{
+      background-color: yellow;
+    }
+
+    /* 형제 선택자 */
+    .div3 ~ div{
+      border: 3px solid red;
+    }
+
+    /* 속성선택자 */
+    /* 특정 속성을 가진 요소 선택 */
+    a[href]{
+      color: blue;
+      text-decoration: none;
+    }
+
+    /* 특정 속성값을 가진 요소 선택 */
+    a[id="div3-a"]{
+      font-weight: bold;
+      font-size: 25px;
+    }
+
+    /* 특정 단어만 포함하는 속성값을 가진 요소 선택 */
+    a[href*="naver"]{
+      border-bottom: 3px dashed red;
+      font-size: 50px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    main
+    <section>
+      section
+      <div class="container">
+        container
+        <div class="div1">div1</div>
+        <div class="div2">
+          <a href="https://www.naver.com">div2</a>
+        </div>
+        <div class="div3"><a href="" id="div3-a">div3</a>
+        </div>
+        <div class="div4">div4</div>
+        <div class="div5">div5</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

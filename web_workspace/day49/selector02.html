@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상선택자</title>
+  <style>
+    a{
+      color: darkblue;
+      text-decoration: none;
+      padding: 10px;
+      font-size: 30px;
+      display: inline-block;
+    }
+
+    /* 마우스를 올렸을 때 */
+    a:hover{
+      color: yellow;
+      background-color: gray;
+    }
+
+    /* 마우스를 클릭했을 때 */
+    a:active{
+      background-color: skyblue;
+    }
+
+    /* 방문한 링크 */
+    a:visited{
+      color: pink;
+      background-color: beige;
+    }
+    /* 처음만 선택하기 */
+    a:first-child{
+      font-size: 15px;
+      font-weight: bold;
+    }
+    /* 마지막선택하기 */
+    a:last-child{
+      font-size:100px;
+    }
+    /* n번째 선택하기 */
+    a:nth-child(3){
+      font-size: 10px;
+    }
+    /* ~만 제외하고 선택하기 */
+    a:not(a:nth-child(2)){
+      color:green;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    main
+    <section>
+      section
+      <div class="container">
+        <a href="selector01.html" target="_blank">링크1</a>
+        <a href="link">링크2</a>
+        <a href="">링크3</a>
+        <a href="">링크4</a>
+        <a href="">링크5</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
