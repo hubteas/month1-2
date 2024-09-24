@@ -1,0 +1,24 @@
+day41(jdbc / 웹개발3 5일차)
+
+1. jdbc
+	Java Database Connectivity (자바 데이터베이스 연결)
+	자바 프로그램과 데이터베이스를 연결시켜주는 API
+
+2. JDBC 사용순서
+1) JDBC Driver 로딩
+	DB에 맞는 드라이버를 로딩한다.
+
+2) Connection
+	드라이버 연결 후 커넥션 객체를 얻어낸다.
+	커넥션 객체를 정상적으로 얻어 냈다면, DBMS와 정상연결 된 것이다.
+
+3) PreparedStatement
+	JDBC를 통해 DBMS에 보낼 쿼리를 관리해주는 인터페이스
+	executeUpdate() / executeQuery() 메소드를 통해 쿼리를 날린다.
+
+4) ResultSet
+	쿼리의 결과를 받을 때 사용하는 인터페이스
+	DBMS에서 실행한 쿼리의 결과는 테이블형태라는 사실을 주의하자!!
+
+5) close()
+	항상 db와 연결하여 사용한 객체들은 close()를 통해 연결을 닫아줘야 한다.

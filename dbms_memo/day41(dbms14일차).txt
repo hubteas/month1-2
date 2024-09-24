@@ -1,0 +1,38 @@
+day41(dbms 15일차 / 웹개발3 5일차)
+
+복습 -> TCL > 실습문제 -> JDBC
+
+0. 복습
+1) 집합연산
+	UNION, UNION ALL, INTERSECT, MINUS
+
+2) VIEW
+	기존의 테이블은 그대로 두고 필요한 컬럼 또는 새로운 컬럼을 만든 가상 테이블
+	독립성, 편리성, 보안성
+
+	CREATE VIEW 뷰이름 AS 쿼리문;
+	DROP VIEW 뷰이름;
+	SELECT * FROM 뷰이름;
+
+3) DCL : 데이터 제어어
+	GRANT, REVOKE
+
+- 계정생성
+	SYS AS SYSDBA 접속한 상태에서 계정 생성 가능하다.
+	CREATE USER 계정명 IDENTIFIED BY 비밀번호;
+
+- 로그인권한, 테이블 생성권한, 뷰 생성 권한, 운영자권한(데이터값을 넣을 수 있는 권한)
+	GRANT CREATE SESSION, CREATE TABLE, CREATE VIEW, RESOURCE TO  계정명;
+
+- 권한 회수
+	REVOKE 권한 [ON 테이블명] FROM 계정; 
+
+1. TCL(TRANSATION CONTROL LANGUAGE) : 트랜잭션 제어어
+
+	트랜잭션 : 하나의 작업 단위 (묶음 단위)
+		여러개의 SQL 문의 묶음
+
+	COMMIT
+		모든 작업(트랜잭션)을 확정하는 명령어
+	ROLLBACK
+		이전 커밋 시점으로 되돌아가는 명령어

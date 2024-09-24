@@ -1,0 +1,82 @@
+day04
+복습 -> view -> DCL -> TCL
+
+0. 복습
+1) JOIN
+- 내부조인 : 공통 존재하는 컬럼의 값이 같은 경우를 추출하는 기법
+- 외부조인 
+   - 왼쪽 외부조인 : 왼쪽 테이블의 모든 데이터와 
+          오른쪽 테이블의 동일 데이터를 추출하는 기법
+   - 오른쪽 외부조인 : 오른쪽 테이블의 모든 데이터와
+         왼쪽 테이블의 동일 데이터를 추출하는 기법
+   - 완전 외부조인 : 양쪽의 모든 데이터를 추출하는 기법
+- 교차조인 : 조인 조건이 없는 모든 데이터 조합을 추출하는 기법
+- 셀프조인 : 자기자신에게 별칭을 지정한 뒤 다시 조인하는 기법
+
+2) 내부조인
+   SELECT A.컬럼명1, A.컬럼명2, B.컬럼명1, B.컬럼명2
+   FROM 테이블명1 A [INNER] JOIN 테이블명2 B
+   ON A.컬럼명1 = B.컬럼명1
+   [WHERE 검색조건];
+
+3) 외부조인
+   SELECT A.컬럼명1, A.컬럼명2, B.컬럼명1, B.컬럼명2
+   FROM 테이블명1 A LEFT/RIGHT/FULL [OUTER] JOIN 테이블명2 B
+   ON 조인조건
+   [WHERE 검색조건];
+
+4) 셀프조인
+   SELECT A.컬럼명1, A.컬럼명2, B.컬럼명1, B.컬럼명2
+   FROM 테이블명1 A [OUTER / INNER] JOIN 테이블명1 B
+   ON 조인조건
+   [WHERE 검색조건];
+
+5) 형변환 함수
+   TO_CHAR()
+   TO_NUMBER()
+   TO_DATE()
+
+1. 집합연산
+   UNION    합집합, 중복을 허용하지 않는다
+   UNION ALL 합집합, 중복을 허용한다
+   INTERSECT : 교집합
+   MINUS : 차집합
+
+2. VIEW
+	기존의 테이블을 그대로 놔둔 채 필요한 컬럼들 및 새로운 컬럼을 만든 가상 테이블
+	실제 데이터가 저장되는 것은 아니지만 VIEW 를 통해서 데이터를 관리할 수 있다.
+
+1) VIEW 를 사용하는 이유
+	독립성 : 다른 곳에서 원본 테이블을 접근하지 못하도록 하는 성질
+	편리성 : 긴 쿼리문을 짧게 만드는 성질
+	보안성 : 기존의 쿼리문이 보이지 않는다.
+
+2) VIEW 문법
+	CREATE VIEW 뷰이름 AS 쿼리문;
+
+3. DCL(DATA CONTROLL LANGUAGE) : 데이터 제어어
+DDL(데이터정의어) : CREATE, ALTER, DROP, TRUNCATE
+DML(데이터조작어) : SELECT INSERT, UPDATE, DELETE
+DCL(데이터제어어) : GRANT, REVOKE
+
+1) 계정 생성
+	SYS AS SYSDBA으로 접속해서 계정을 생성한다.
+	CREATE USER 계정명 IDENTIFIED by 비밀번호;
+
+2) 생성한 계정에 로그인 권한 부여하기
+	 GRANT CREATE SESSION TO 계정명;
+
+3) 생성한 계정으로 테이블, 데이터 추가하기 위한 권한 부여하기
+	GRANT CREATE TABLE, CREATE VIEW, RESOURCE TO 계정명;
+
+4) DCL : 데이터 제어어
+	데이터베이스에 접근하는 권한을 제어하는 명령어
+	SYS 계정에서 가능하다.
+권한 부여/ 권한 회수 명령어
+ 	GRANT : 계정에 권한을 부여하는 명령어
+		GRANT 권한 [ON 테이블명] TO 계정명;
+	REVOKE : 계정에 주어진 권한을 제거(회수)하는 명령어
+		REVOKE 권한 [ON 테이블명] FROM 계정명;
+
+
+

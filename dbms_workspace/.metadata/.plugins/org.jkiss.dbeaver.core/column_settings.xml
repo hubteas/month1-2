@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item id="NodeList/DBNProject">
+		<column name="경로" visible="true" order="0" width="100"/>
+		<column name="크기" visible="true" order="1" width="100"/>
+		<column name="최종 수정" visible="true" order="2" width="100"/>
+	</item>
+	<item id="NodeList/DBNProjectDatabases/DBNBookmarkFolder/DBNDashboardFolder/DBNDiagramFolder/DBNResource">
+		<column name="이름" visible="true" order="0" width="100"/>
+		<column name="경로" visible="true" order="1" width="153"/>
+		<column name="크기" visible="true" order="2" width="100"/>
+		<column name="최종 수정" visible="true" order="3" width="100"/>
+	</item>
+	<item id="NodeList/DataSourceDescriptor">
+		<column name="이름" visible="true" order="0" width="100"/>
+		<column name="설명" visible="true" order="1" width="100"/>
+		<column name="Origin" visible="true" order="2" width="100"/>
+		<column name="드라이버 유형" visible="true" order="3" width="100"/>
+	</item>
+	<item id="NodeList/OracleJob">
+		<column name="Name" visible="true" order="0" width="100"/>
+		<column name="Login user" visible="true" order="1" width="100"/>
+		<column name="Privileged user" visible="true" order="2" width="100"/>
+		<column name="Schema user" visible="true" order="3" width="100"/>
+		<column name="Last date" visible="true" order="4" width="100"/>
+		<column name="This date" visible="true" order="5" width="100"/>
+		<column name="Next date" visible="true" order="6" width="100"/>
+		<column name="Interval" visible="true" order="7" width="100"/>
+		<column name="Time spent" visible="true" order="8" width="100"/>
+		<column name="Failures" visible="true" order="9" width="100"/>
+		<column name="Instance" visible="true" order="10" width="100"/>
+		<column name="NLS environment" visible="true" order="11" width="108"/>
+		<column name="Broken" visible="true" order="12" width="100"/>
+	</item>
+	<item id="NodeList/OracleTable">
+		<column name="Name" visible="true" order="0" width="100"/>
+		<column name="Partitioned" visible="true" order="1" width="100"/>
+		<column name="Created" visible="true" order="2" width="100"/>
+		<column name="Last Changed" visible="true" order="3" width="100"/>
+		<column name="Partition keys" visible="true" order="4" width="100"/>
+		<column name="Subpartition keys" visible="true" order="5" width="107"/>
+		<column name="Stat Row Count" visible="true" order="6" width="100"/>
+		<column name="Tablespace" visible="true" order="7" width="100"/>
+		<column name="Comment" visible="true" order="8" width="100"/>
+		<column name="Partition by interval kind" visible="true" order="9" width="146"/>
+		<column name="Partition interval" visible="true" order="10" width="102"/>
+	</item>
+	<item id="NodeList/OracleTableColumn">
+		<column name="컬럼명" visible="true" order="0" width="171"/>
+		<column name="#" visible="true" order="1" width="100"/>
+		<column name="Type" visible="true" order="2" width="126"/>
+		<column name="Type Mod" visible="true" order="3" width="100"/>
+		<column name="Not Null" visible="true" order="4" width="100"/>
+		<column name="디폴트" visible="true" order="5" width="100"/>
+		<column name="Comment" visible="true" order="6" width="647"/>
+	</item>
+	<item id="SchemaSelector">
+		<column name="Name" visible="true" order="0" width="130"/>
+	</item>
+	<item id="Suggestion/NodeList/OracleTableColumn">
+		<column name="컬럼명" visible="true" order="0" width="120"/>
+		<column name="#" visible="true" order="1" width="27"/>
+		<column name="Type" visible="true" order="2" width="100"/>
+		<column name="Type Mod" visible="false" order="3" width="100"/>
+		<column name="Not Null" visible="true" order="3" width="59"/>
+		<column name="디폴트" visible="true" order="4" width="50"/>
+		<column name="Comment" visible="true" order="5" width="68"/>
+	</item>
+	<item id="scriptSelectorViewer">
+		<column name="Script" visible="true" order="0" width="139"/>
+		<column name="Time" visible="true" order="1" width="197"/>
+		<column name="Info" visible="true" order="2" width="82"/>
+		<column name="Folder" visible="true" order="3" width="94"/>
+	</item>
+</items>

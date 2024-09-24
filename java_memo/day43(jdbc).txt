@@ -1,0 +1,20 @@
+day43(jdbc/웹개발3 7일차)
+
+복습 -> jdbc
+
+0. 복습
+1) 소프트웨어 디자인 설계패턴
+   MVC
+   M(Model) : 테이블에서 조회된 결과값을 담기 위한 변수들이 선언된 클래스
+   V(View) : 사용자에게 보여질 화면을 구성하는 부분
+   C(Controller) : crud를 진행할 메소드
+      DAO(Data Access Object) : 테이블에 접근할 수 있는 메소드들이 선언된 클래스
+         접근 후 결과값이 있을경우 Model 객체에 담은 후 처리
+
+2) JDBC 사용순서
+- JDBC Driver 로딩
+- Connection 드라이버 연결 후 커넥션 객체를 얻어낸다
+- PreparedStatement JDBC를 통해 DBMS에 보낼 쿼리를 관리해주는 인터페이스
+      executeUpdate() / executeQuery()
+- ResultSet 쿼리의 결과를 받을 때 사용하는 인터페이스
+- close() 항상 db와 연결하여 사용한 객체들은 close()를 통해 연결을 닫아야한다

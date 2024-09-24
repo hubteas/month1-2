@@ -1,0 +1,149 @@
+day39(웹개발3 3일차)
+복습 -> join -> 집합 -> view
+
+0. 복습
+1) SQL 실행순서
+   FROM > ON > JOIN > WHERE > GROUP BY > HAVING > SELECT > ORDER BY
+
+   FROM : 데이터를 가져올 테이블 지정
+   ON : 조인 연산시 조인조건을 설정
+   JOIN : 테이블 병합
+   WHERE : 조건에 맞는 행을 필터링
+   GROUP BY : 그룹화 조건 설정
+   HAVING : 그룹화된 결과에 대한 조건 설정
+   SELECT : 가져올 컬럼을 선택
+   ORDER BY : 결과 정렬
+
+2) SQL 문법
+   SELECT [DISTINCT] 컬럼명 AS 별칭
+   FROM 테이블명1 t1 [INNER / LEFT OUTER / RIGHT OUTER / FULL OUTER] JOIN 테이블명2 t2
+   ON t1.컬럼명 = t2.컬럼명
+   WHERE 컬럼명 조건 (집계함수 사용불가능)
+   GROUP BY 컬럼명
+   HAVING 컬럼 그룹화된 결과에 대한 조건
+   ORDER BY 컬럼명 ASC or DESC
+
+3) join
+   두 개 이상의 테이블을 연결하여 데이터를 검색하는 방법
+   여러 테이블에 흩어져있는 정보 중 사용자가 필요한 정보만 가져와서 가상의 테이블처럼 만들고 결과를 보여주는 것
+
+1. 내부조인(INNER JOIN)
+   조건이 정확히 일치하는 값만 합쳐서 조회
+
+	문법
+  	 SELECT A.컬럼명1, A.컬럼명2, B.컬럼명1, B.컬럼명2
+	 FROM 테이블명1 A [INNER] JOIN 테이블명2 B
+	 ON [조인조건] A.컬럼명 = B.컬럼명
+	 [WHERE] 검색조건;
+
+- 등가조인
+	ON절에 =(등호)가 있을 때
+	두 테이블에 FK로 관계가 있다면 부모테이블의 PK와 자식테이블의 FK를 등호로 비교가 가능하기때문에
+	등가조인 사용이 가능하다.
+
+- 비등가조인
+	ON절에 =(등호)가 없을때
+
+2. 외부조인(OUTER JOIN)
+   내부조인과는 다르게 한쪽에만 값이 있어도 테이블을 합쳐서 보여준다
+
+1) 왼쪽 외부조인
+   SELECT A.컬럼1, A.컬럼2, B.컬럼1, B.컬럼2
+   FROM 테이블명1 A LEFT [OUTER] JOIN 테이블2 B
+   ON 조인조건
+   [WHERE 검색조건];
+
+2) 오른쪽 외부조인
+   SELECT A.컬럼1, A.컬럼2, B.컬럼1, B.컬럼2
+   FROM 테이블명1 A RIGHT [OUTER] JOIN 테이블2 B
+   ON 조인조건
+   [WHERE 검색조건];
+
+3) 완전 외부조인
+   SELECT A.컬럼1, A.컬럼2, B.컬럼1, B.컬럼2
+   FROM 테이블명1 A FULL [OUTER] JOIN 테이블2 B
+   ON 조인조건
+   [WHERE 검색조건];
+
+4) 셀프조인
+   SELECT A.컬럼1, A.컬럼2, B.컬럼1
+   FROM 테이블명1 A [OUTER/INNER] JOIN 테이블명1 B
+   ON A.컬럼1 = B.컬럼1
+   [WHERE 검색조건];
+
+---------------------------------------------------------
+도서(A)         도서가격(B)
+책번호    책이름      책번호   가격
+111   운영체제      111   15000
+222    JAVA      222   24000
+444   DBMS      333   10000
+666   SPRING BOOT   444   13000
+         555   16000
+
+---------------------------------------------------------
+
+1) INNER JOIN 
+SELECT A.책이름, B.가격
+FROM A A INNER JOIN B B
+ON A.책번호 = B.책번호;
+
+[결과]
+운영체제   15000
+JAVA   24000
+DBMS   13000
+
+2) LEFT OUTER JOIN
+SELECT A.책이름, B.가격
+FROM 도서 A LEFT OUTER JOIN 도서가격 B
+ON A.책번호 = B.책번호; 
+
+[결과]
+운영체제      15000
+JAVA      24000
+DBMS      13000
+SPRING BOOT   NULL
+
+3) RIGHT OUTER JOIN
+SELECT A.책이름, B.가격
+FROM 도서 A RIGHT OUTER JOIN 도서가격 B
+ON A.책번호 = B.책번호;  
+
+[결과]
+운영체제   15000
+JAVA   24000
+NULL   10000
+DBMS   13000
+NULL   16000
+
+4) 완전 외부 조인
+SELECT A.책이름, B.가격
+FROM 도서 A FULL OUTER JOIN 도서가격 B
+ON A.책번호 = B.책번호;  
+
+책이름      가격
+운영체제      15000
+JAVA      24000
+NULL      10000
+DBMS      13000
+NULL      16000
+SPRING BOOT   NULL
+
+3. 형변환 함수
+	TO_CHAR() : CHAR형으로변환
+		날짜형식으로 변경할 때 유용하게 사용할 수 있다.
+		EX) TO_CHAR(SYSDATE, 'YYYY-MM-DD')
+		YYYY : 년, MM : 월, DD: 일
+		HH24 : 24시간, HH : 12시간, MI : 분, SS: 초
+	TO_NUMBER() : NUMBER 형으로 변환
+	TO_DATE() : DATE형으로 변환
+
+4. 집합
+   UNION : 합집합, 중복을 허용하지 않는다
+   UNION ALL : 합집합, 중복을 허용한다
+   INTERSECT : 교집합
+   MINUS : 차집합
+
+   - UNION은 JOIN 처럼 두 테이블을 같이 조회할 때 사용한다
+   JOIN은 두 테이블을 가로방향으로 합치고(열), UNION은 세로 방향으로 합친다
+   UNION은 반드시 열의 수와 타입이 일치해야한다
+   
